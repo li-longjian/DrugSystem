@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lilongjian.dao.UserMapper">
+    <select id="login" resultType="user" parameterType="map">
+        select * from USER where email=#{email} and password=#{password}
+    </select>
+    <select id="getAllUser" resultType="user">
+        select * from user
+    </select>
+    <select id="getUserById" resultType="user" parameterType="int">
+        select * from USER where id=#{id}
+    </select>
+    <select id="getUserByEmail" parameterType="String" resultType="user">
+        select * from USER where email=#{email}
+    </select>
+    <insert id="registerUser" parameterType="map">
+        insert into USER values (#{id},#{isAdmin},#{name},#{email},#{password},#{avatar},#{date},#{identity})
+    </insert>
+    <update id="updateUser" parameterType="map">
+        update USER set  isAdmin=#{isAdmin},name=#{name},email=#{email},password=#{password},avatar=#{avatar},date=#{date},identity=#{identity} where id=#{id}
+    </update>
+    <delete id="deleteUserById" parameterType="int">
+        delete from USER where id=#{id}
+    </delete>
+</mapper>
