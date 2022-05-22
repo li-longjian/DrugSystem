@@ -12,6 +12,7 @@
         <module>UserProvider</module>
         <module>Eureka-Server</module>
         <module>FeignConsumer</module>
+        <module>GateWay</module>
     </modules>
 
     <!--spring boot 环境-->

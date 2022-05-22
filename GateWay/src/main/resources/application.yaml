@@ -1,0 +1,30 @@
+server:
+    port: 3000
+spring:
+    application:
+        name: Eureka-GateWay
+    cloud:
+        gateway:
+            enabled: true
+            globalcors:
+                cors-configurations:
+                   '[/**]': # 匹配所有请求
+                        allowedHeaders: "*"
+                        allowCredentials: true
+                        allowedOrigins: "*" # 跨域处理 允许所有的域
+                        allowedMethods: "*" # 支持的方法
+            routes:
+            - id: FeignConsumer
+              uri:
+                  lb://FeignConsumer
+              predicates:
+              - Path=/**/**
+
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

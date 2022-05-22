@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="UserProvider" />
         <module name="Eureka-Server" />
+        <module name="GateWay" />
         <module name="FeignConsumer" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
       <module name="Consumer" options="-parameters" />
       <module name="Eureka-Server" options="-parameters" />
       <module name="FeignConsumer" options="-parameters" />
+      <module name="GateWay" options="-parameters" />
       <module name="UserProvider" options="-parameters" />
       <module name="药品招投标管理系统" options="-parameters" />
     </option>
