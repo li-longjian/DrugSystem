@@ -16,7 +16,8 @@ public interface UserInterface {
 
     @GetMapping("/user/getAll")
     List<User> getAllUser();
-
+    @GetMapping("/user/page")
+    List<User> getUserPage(@RequestParam(value = "pageNum",defaultValue = "1") String pageNum,@RequestParam(value = "pageSize",defaultValue = "5")String pageSize);
     @GetMapping("/user/get/{id}")
     User getUserById(@PathVariable("id") int id);
 

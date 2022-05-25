@@ -19,3 +19,9 @@ eureka:
   client:
     service-url:
       defaultZeon: http://localhost:8761/eureka
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql

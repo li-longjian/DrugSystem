@@ -17,6 +17,7 @@ public interface UserMapper {
      */
     User login(Map<String,String> map);
     List<User> getAllUser();
+    //List<User> getUserByPage(String page,String pageSize);
     User getUserById(int id);
     User getUserByEmail(String email);
     int registerUser(User user);
@@ -24,4 +25,5 @@ public interface UserMapper {
     int deleteUserById(int id);
     //模糊查询
     List<User> findUser(String name);
+
 }

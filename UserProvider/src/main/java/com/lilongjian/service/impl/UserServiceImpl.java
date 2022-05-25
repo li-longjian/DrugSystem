@@ -1,5 +1,7 @@
 package com.lilongjian.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.lilongjian.dao.UserMapper;
 import com.lilongjian.domain.User;
 import com.lilongjian.service.UserService;
@@ -29,6 +31,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAllUser() {
         return userMapper.getAllUser();
+    }
+
+    @Override
+    public List<User> getUserByPage(String pageNum, String pageSize) {
+        Integer page = Integer.parseInt(pageNum);
+        Integer size = Integer.parseInt(pageSize);
+        PageHelper.startPage(page,size);
+        List<User> allUser = userMapper.getAllUser();
+        return allUser;
     }
 
     @Override

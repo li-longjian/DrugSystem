@@ -38,6 +38,11 @@ public class UserController {
         return userService.getAllUser();
     }
 
+    @GetMapping("/page")
+    public List<User> getUserByPage(@RequestParam(value = "pageNum", defaultValue = "1") String pageNum, @RequestParam(value = "pageSize", defaultValue = "5") String pageSize) {
+        return userService.getUserByPage(pageNum, pageSize);
+    }
+
     @GetMapping("/get/{id}")
     public User getUserById(@PathVariable("id") int id) {
         return userService.getUserById(id);
@@ -122,4 +127,6 @@ public class UserController {
         List<User> userList = userService.findUser(name);
         return userList;
     }
+
+
 }

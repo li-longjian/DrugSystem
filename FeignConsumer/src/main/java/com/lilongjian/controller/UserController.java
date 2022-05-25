@@ -20,7 +20,10 @@ public class UserController {
 
         return userClient.UserLogin(email,password);
     }
-
+    @GetMapping("/page")
+    public List<User> getUserPage(String pageNum,String pageSize){
+        return userClient.getUserPage(pageNum,pageSize);
+    }
     @GetMapping("/getAll")
     public List<User> getAllUser(){
         return userClient.getAllUser();
