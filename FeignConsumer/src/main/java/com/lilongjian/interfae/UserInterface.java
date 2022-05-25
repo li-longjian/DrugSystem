@@ -31,4 +31,7 @@ public interface UserInterface {
 
     @GetMapping("/user/del/{id}")
     Map<String, String> deleteUser(@PathVariable("id") int id);
+
+    @PostMapping("/user/find")
+    List<User> find(@RequestParam("name")String name);
 }

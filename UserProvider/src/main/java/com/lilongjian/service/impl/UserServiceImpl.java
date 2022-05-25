@@ -3,6 +3,7 @@ package com.lilongjian.service.impl;
 import com.lilongjian.dao.UserMapper;
 import com.lilongjian.domain.User;
 import com.lilongjian.service.UserService;
+import com.lilongjian.util.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User login(String email,String password) {
         Map<String,String> map = new HashMap<>();
-
         map.put("email",email);
         map.put("password",password);
         return userMapper.login(map);
@@ -44,6 +44,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int registerUser(User user) {
+        String email = user.getEmail();
+        String password = user.getPassword();
+        //加密密码
+        MD5Utils md5Utils = new MD5Utils();
+        String newPassword = md5Utils.getMD5(password, email);
+        user.setPassword(newPassword);
         return userMapper.registerUser(user);
     }
 
@@ -65,5 +71,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public int deleteUserById(int id) {
         return userMapper.deleteUserById(id);
+    }
+
+    @Override
+    public List<User> findUser(String name) {
+
+        return userMapper.findUser(name);
     }
 }

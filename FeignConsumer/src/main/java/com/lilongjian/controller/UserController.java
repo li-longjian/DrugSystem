@@ -17,6 +17,7 @@ public class UserController {
 
     @PostMapping("/login")
     public Map<String, Object> UserLogin(String email, String password){
+
         return userClient.UserLogin(email,password);
     }
 
@@ -51,4 +52,8 @@ public class UserController {
         return userClient.deleteUser(id);
     }
 
+    @PostMapping("/find")
+    public List<User> findUser(String name) {
+       return userClient.find(name);
+    }
 }

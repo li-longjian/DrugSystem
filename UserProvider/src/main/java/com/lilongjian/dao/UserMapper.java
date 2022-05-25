@@ -22,4 +22,6 @@ public interface UserMapper {
     int registerUser(User user);
     int updateUser(User user);
     int deleteUserById(int id);
+    //模糊查询
+    List<User> findUser(String name);
 }

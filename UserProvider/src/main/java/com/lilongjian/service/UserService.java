@@ -13,4 +13,5 @@ public interface UserService {
     int registerUser(User user);
     int updateUser(User user);
     int deleteUserById(int id);
+    List<User> findUser(String name);
 }

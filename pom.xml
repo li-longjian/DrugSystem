@@ -13,6 +13,7 @@
         <module>Eureka-Server</module>
         <module>FeignConsumer</module>
         <module>GateWay</module>
+        <module>README</module>
     </modules>
 
     <!--spring boot 环境-->

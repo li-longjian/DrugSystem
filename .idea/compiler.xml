@@ -10,6 +10,7 @@
         <module name="Eureka-Server" />
         <module name="GateWay" />
         <module name="FeignConsumer" />
+        <module name="README" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +23,7 @@
       <module name="Eureka-Server" options="-parameters" />
       <module name="FeignConsumer" options="-parameters" />
       <module name="GateWay" options="-parameters" />
+      <module name="README" options="-parameters" />
       <module name="UserProvider" options="-parameters" />
       <module name="药品招投标管理系统" options="-parameters" />
     </option>
