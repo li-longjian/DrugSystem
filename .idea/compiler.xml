@@ -6,10 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="UserProvider" />
-        <module name="Eureka-Server" />
-        <module name="GateWay" />
         <module name="FeignConsumer" />
+        <module name="GateWay" />
+        <module name="UserProvider" />
+        <module name="ZBprovider" />
+        <module name="Eureka-Server" />
         <module name="README" />
       </profile>
     </annotationProcessing>
@@ -25,6 +26,7 @@
       <module name="GateWay" options="-parameters" />
       <module name="README" options="-parameters" />
       <module name="UserProvider" options="-parameters" />
+      <module name="ZBprovider" options="-parameters" />
       <module name="药品招投标管理系统" options="-parameters" />
     </option>
   </component>

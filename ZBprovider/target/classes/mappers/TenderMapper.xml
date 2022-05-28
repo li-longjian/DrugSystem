@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lilongjian.dao.TenderMapper">
+    <select id="getTenderById" resultType="tender" parameterType="int">
+        select * from zb where id=#{id}
+    </select>
+    <select id="getTenderByNumber" parameterType="String" resultType="tender">
+        select * from zb where number=#{number}
+    </select>
+    <select id="getTendersByAnnouncer" resultType="tender" parameterType="String" >
+        select * from zb where announcer = #{announcer}
+    </select>
+    <update id="setTenderStatus" parameterType="map">
+        update zb set status = #{status} where number = #{number}
+    </update>
+    <update id="setStatusById" parameterType="map">
+        update zb set status=#{status} where id=#{id}
+    </update>
+    <update id="update" parameterType="tender">
+        update zb set companyName=#{companyName},packaged=#{packaged},
+        total=#{total},expirationDate=#{expirationDate},date=#{date},durgName=#{durgName},announcer=#{announcer},
+        status=#{status},marked=#{marked} where number = #{number}
+    </update>
+    <delete id="deleteByNumber" parameterType="String" >
+        delete from zb where number=#{number}
+    </delete>
+    <delete id="deleteById" parameterType="int">
+        delete from zb where id=#{id};
+    </delete>
+    <insert id="addNewTender" parameterType="tender" >
+        insert into zb values (#{id},#{number},#{companyName},#{packaged},
+        #{total},#{expirationDate},#{date},#{durgName},#{announcer},
+        #{status},#{marked})
+    </insert>
+    <select id="getAllTenders" resultType="tender">
+        select * from zb
+    </select>
+</mapper>
