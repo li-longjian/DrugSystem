@@ -21,7 +21,7 @@
     </update>
     <update id="update" parameterType="tender">
         update zb set companyName=#{companyName},packaged=#{packaged},
-        total=#{total},expirationDate=#{expirationDate},date=#{date},durgName=#{durgName},announcer=#{announcer},
+        total=#{total},expirationDate=#{expirationDate},durgName=#{durgName},announcer=#{announcer},
         status=#{status},marked=#{marked} where number = #{number}
     </update>
     <delete id="deleteByNumber" parameterType="String" >

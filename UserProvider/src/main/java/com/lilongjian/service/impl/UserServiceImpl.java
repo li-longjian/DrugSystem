@@ -20,13 +20,13 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
 
-    @Override
-    public User login(String email,String password) {
-        Map<String,String> map = new HashMap<>();
-        map.put("email",email);
-        map.put("password",password);
-        return userMapper.login(map);
-    }
+//    @Override
+//    public User login(String email,String password) {
+//        Map<String,String> map = new HashMap<>();
+//        map.put("email",email);
+//        map.put("password",password);
+//        return userMapper.login(map);
+//    }
 
     @Override
     public List<User> getAllUser() {

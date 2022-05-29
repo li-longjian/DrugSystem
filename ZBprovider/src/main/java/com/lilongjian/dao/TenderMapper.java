@@ -10,6 +10,7 @@ import java.util.Map;
 @Repository
 @Mapper
 public interface TenderMapper {
+
     Tender getTenderById(int id);
     Tender getTenderByNumber(String number);
     List<Tender> getAllTenders();

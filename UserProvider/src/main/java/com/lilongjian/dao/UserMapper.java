@@ -15,7 +15,7 @@ public interface UserMapper {
      * @param map String email,String password
      * @return
      */
-    User login(Map<String,String> map);
+   // User login(Map<String,String> map);
     List<User> getAllUser();
     //List<User> getUserByPage(String page,String pageSize);
     User getUserById(int id);

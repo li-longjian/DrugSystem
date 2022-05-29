@@ -15,6 +15,9 @@ public class TenderController {
     @Autowired
     private TenderService tenderService;
 
+
+
+
     @GetMapping("/get/{id}")
     Tender getTenderById(@PathVariable(value = "id") int id) {
         return tenderService.getTenderById(id);

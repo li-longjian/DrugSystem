@@ -11,8 +11,8 @@ import java.util.Map;
 @FeignClient(value = "userProvider")
 public interface UserInterface {
 
-    @PostMapping("/user/login")
-    Map<String, Object> UserLogin(@RequestParam("email") String email,@RequestParam("password") String password);
+//    @PostMapping("/user/login")
+//    Map<String, Object> UserLogin(@RequestParam("email") String email,@RequestParam("password") String password);
 
     @GetMapping("/user/getAll")
     List<User> getAllUser();

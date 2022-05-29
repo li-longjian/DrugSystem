@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface UserService {
-    User login(String email,String password);
+    //User login(String email,String password);
     List<User> getAllUser();
     List<User> getUserByPage(String pageNum, String pageSize);
     User getUserById(int id);

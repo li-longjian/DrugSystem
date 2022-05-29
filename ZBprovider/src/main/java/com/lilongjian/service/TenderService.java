@@ -1,11 +1,12 @@
 package com.lilongjian.service;
 
 import com.lilongjian.domain.Tender;
+
 import java.util.List;
-import java.util.Map;
 
 
 public interface TenderService {
+
     Tender getTenderById(int id);
     Tender getTenderByNumber(String number);
     List<Tender> getTendersByAnnouncer(String email);//得到所有当前发布者发布的招标信息

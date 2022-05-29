@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lilongjian.dao.UserMapper">
-    <select id="login" resultType="user" parameterType="map">
-        select * from USER where email=#{email} and password=#{password}
-    </select>
+<!--    <select id="login" resultType="user" parameterType="map">-->
+<!--        select * from USER where email=#{email} and password=#{password}-->
+<!--    </select>-->
     <select id="getAllUser" resultType="user">
         select * from user
     </select>
