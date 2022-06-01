@@ -1,6 +1,7 @@
 package com.lilongjian.service.Impl;
 
 import com.lilongjian.dao.TenderMapper;
+import com.lilongjian.domain.Bidding;
 import com.lilongjian.domain.Tender;
 import com.lilongjian.service.TenderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,11 @@ public class TenderServiceImpl implements TenderService {
     @Override
     public List<Tender> getTendersByAnnouncer(String email) {
         return tenderMapper.getTendersByAnnouncer(email);
+    }
+
+    @Override
+    public List<Bidding> getBiddingBuNumber(String number) {
+        return tenderMapper.getBiddingBuNumber(number);
     }
 
     @Override

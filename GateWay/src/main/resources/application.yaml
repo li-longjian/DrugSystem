@@ -22,6 +22,7 @@ spring:
 
 
 
+
 eureka:
   instance:
     hostname: localhost

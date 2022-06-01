@@ -1,5 +1,6 @@
 package com.lilongjian.controller;
 
+import com.lilongjian.domain.Bidding;
 import com.lilongjian.domain.Tender;
 import com.lilongjian.service.TenderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,6 @@ public class TenderController {
     @Autowired
     private TenderService tenderService;
 
-
-
-
     @GetMapping("/get/{id}")
     Tender getTenderById(@PathVariable(value = "id") int id) {
         return tenderService.getTenderById(id);
@@ -32,7 +30,10 @@ public class TenderController {
     List<Tender> getTendersByAnnouncer(@RequestParam("email") String email) {
         return tenderService.getTendersByAnnouncer(email);
     }
-
+    @GetMapping("/get/bids")
+    List<Bidding> getBiddingByZBNumber(@RequestParam("number") String number){
+        return tenderService.getBiddingBuNumber(number);
+    }
     @GetMapping("/getAll")
     List<Tender> getAllTenders() {
         return tenderService.getAllTenders();

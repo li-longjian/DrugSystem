@@ -1,0 +1,6 @@
+com\DrugSystem\service\BiddingService.class
+com\DrugSystem\service\Impl\BiddingServiceImpl.class
+com\DrugSystem\controller\TBController.class
+com\DrugSystem\dao\BiddingMapper.class
+com\DrugSystem\domain\Bidding.class
+com\DrugSystem\TBApplication.class

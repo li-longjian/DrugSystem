@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.DrugSystem.dao.BiddingMapper">
+    <select id="getBiddingById" resultType="bidding" parameterType="int">
+        select * from tb where id=#{id}
+    </select>
+    <select id="getBiddingBuNumber" parameterType="String" resultType="bidding">
+        select * from tb where number=#{number}
+    </select>
+    <select id="getAllBidding" resultType="bidding">
+        select * from tb
+    </select>
+    <select id="getBiddingByAnnouncer" resultType="bidding" parameterType="String" >
+        select * from tb where announcer=#{announcer}
+    </select>
+    <update id="setBiddingStatus" parameterType="map" >
+        update tb set status = #{status} where number = #{number}
+    </update>
+    <update id="setStatusById" parameterType="int">
+         update tb set status=#{status} where id=#{id}
+    </update>
+    <update id="update" parameterType="bidding">
+        update  tb set  legalName=#{legalName},phone=#{phone},zbnumber=#{zbnumber},
+        companName=#{companName},bailTotal=#{bailTotal},announcer=#{announcer}
+        where number=#{number}
+    </update>
+    <delete id="deleteByNumber" parameterType="String" >
+        delete from tb where number = #{number}
+    </delete>
+    <delete id="deleteById" parameterType="int">
+        delete from tb where id=#{id};
+    </delete>
+
+    <insert id="addBidding" parameterType="bidding">
+        insert into values (#{id},#{legalName},#{phone},#{zbnumber},#{number},#{companName},
+        #{bailTotal},#{announcer},#{date},#{status})
+    </insert>
+</mapper>

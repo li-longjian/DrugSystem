@@ -3,7 +3,6 @@ package com.DrugSystem.service;
 import com.DrugSystem.domain.Bidding;
 
 import java.util.List;
-import java.util.Map;
 
 public interface BiddingService {
     Bidding getBiddingById(int id);

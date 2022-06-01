@@ -1,6 +1,5 @@
 package com.DrugSystem.controller;
 
-import com.DrugSystem.dao.BiddingMapper;
 import com.DrugSystem.domain.Bidding;
 import com.DrugSystem.service.BiddingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/tb")
-public class TBController {
+public class BiddingController {
     @Autowired
     private BiddingService biddingService;
 
@@ -38,7 +37,7 @@ public class TBController {
     }
 
     @PostMapping("/set")
-    Map<String, Object> setBiddingStatus(String number,int status){
+    Map<String, Object> setBiddingStatus(String number, int status){
         Map<String, Object> map = new HashMap<>();
         Bidding bidding = biddingService.setBiddingStatus(number, status);
         if(bidding == null) {

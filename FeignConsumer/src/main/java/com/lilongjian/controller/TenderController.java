@@ -1,5 +1,6 @@
 package com.lilongjian.controller;
 
+import com.lilongjian.domain.Bidding;
 import com.lilongjian.domain.Tender;
 import com.lilongjian.interfae.TenderInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,11 @@ public class TenderController {
     @GetMapping("/getAll")
     List<Tender> getAllTenders() {
         return tenderClient.getAllTenders();
+    }
+
+    @GetMapping("/get/bids")
+    List<Bidding> getBiddingByZBNumber(String number){
+        return tenderClient.getBiddingByZBNumber(number);
     }
 
     @PostMapping("/set")

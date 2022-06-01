@@ -20,6 +20,17 @@ spring:
               predicates:
               - Path=/**/**
 
+            - id: TBprovider
+              uri:
+                  lb://TBprovider
+              predicates:
+              - Path=/**/**
+            discovery:
+                locator:
+                    enabled: true
+                    lower-case-service-id: true
+
+
 
 
 eureka:

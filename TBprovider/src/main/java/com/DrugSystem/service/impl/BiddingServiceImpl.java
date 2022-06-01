@@ -1,4 +1,4 @@
-package com.DrugSystem.service.Impl;
+package com.DrugSystem.service.impl;
 
 import com.DrugSystem.dao.BiddingMapper;
 import com.DrugSystem.domain.Bidding;
@@ -6,7 +6,10 @@ import com.DrugSystem.service.BiddingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
 
 @Service
 public class BiddingServiceImpl implements BiddingService {

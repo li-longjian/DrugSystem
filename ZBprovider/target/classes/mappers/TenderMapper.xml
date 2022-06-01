@@ -38,4 +38,7 @@
     <select id="getAllTenders" resultType="tender">
         select * from zb
     </select>
+    <select id="getBiddingBuNumber" parameterType="String" resultType="bidding">
+        select * from tb where zbnumber=#{number}
+    </select>
 </mapper>

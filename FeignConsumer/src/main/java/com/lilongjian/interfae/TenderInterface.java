@@ -1,5 +1,6 @@
 package com.lilongjian.interfae;
 
+import com.lilongjian.domain.Bidding;
 import com.lilongjian.domain.Tender;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,9 @@ public interface TenderInterface {
 
     @GetMapping("/zb/getAll")
     List<Tender> getAllTenders();
+
+    @GetMapping("/zb/get/bids")
+    List<Bidding> getBiddingByZBNumber(@RequestParam("number") String number);
 
     @PostMapping("/zb/set")
     Map<String, Object> setTenderStatus(@RequestParam("number") String number, @RequestParam("status") int status) ;

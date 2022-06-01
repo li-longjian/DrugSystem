@@ -1,4 +1,4 @@
-package com.DrugSystem.domain;
+package com.lilongjian.domain;
 
 import java.util.Date;
 
@@ -28,6 +28,22 @@ public class Bidding {
         this.announcer = announcer;
         this.date = date;
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Bidding{" +
+                "id=" + id +
+                ", legalName='" + legalName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", zbnumber='" + zbnumber + '\'' +
+                ", number='" + number + '\'' +
+                ", companName='" + companName + '\'' +
+                ", bailTotal='" + bailTotal + '\'' +
+                ", announcer='" + announcer + '\'' +
+                ", date=" + date +
+                ", status=" + status +
+                '}';
     }
 
     public int getId() {
