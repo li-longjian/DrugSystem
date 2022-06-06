@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.DrugSystem.dao.MessageMapper">
+    <select id="getAllMessage" resultType="message">
+        select * from messages
+    </select>
+    <select id="getMessageByAnnouncer" resultType="message" parameterType="String">
+        select * from messages where announcer=#{announcer}
+    </select>
+    <insert id="addMessage" parameterType="message">
+        insert into messages values (#{id},#{announcer},#{describe},#{status},#{companyName},#{date})
+    </insert>
+    <update id="update" parameterType="message">
+        update messages set describe=#{describe},status=#{status},companyName=#{companyName} where announcer=#{announcer}
+    </update>
+   <delete id="deleteMessage" parameterType="int">
+       delete from messages where id=#{id}
+   </delete>
+</mapper>

@@ -4,7 +4,7 @@
     <file url="file://$PROJECT_DIR$/Eureka-Server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/FeignConsumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GateWay/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/README/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MessageProvider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/TBprovider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UserLoginProvider/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UserProvider/src/main/java" charset="UTF-8" />

@@ -17,6 +17,7 @@
         <module>ZBprovider</module>
         <module>UserLoginProvider</module>
         <module>TBprovider</module>
+        <module>MessageProvider</module>
     </modules>
 
     <!--spring boot 环境-->

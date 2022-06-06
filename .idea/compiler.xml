@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="MessageProvider" />
         <module name="TBprovider" />
         <module name="FeignConsumer" />
         <module name="GateWay" />
@@ -26,6 +27,7 @@
       <module name="Eureka-Server" options="-parameters" />
       <module name="FeignConsumer" options="-parameters" />
       <module name="GateWay" options="-parameters" />
+      <module name="MessageProvider" options="-parameters" />
       <module name="README" options="-parameters" />
       <module name="TBprovider" options="-parameters" />
       <module name="UserLoginProvider" options="-parameters" />
