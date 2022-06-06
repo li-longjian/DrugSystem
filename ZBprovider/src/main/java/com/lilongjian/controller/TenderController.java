@@ -30,17 +30,19 @@ public class TenderController {
     List<Tender> getTendersByAnnouncer(@RequestParam("email") String email) {
         return tenderService.getTendersByAnnouncer(email);
     }
+
     @GetMapping("/get/bids")
-    List<Bidding> getBiddingByZBNumber(@RequestParam("number") String number){
+    List<Bidding> getBiddingByZBNumber(@RequestParam("number") String number) {
         return tenderService.getBiddingBuNumber(number);
     }
+
     @GetMapping("/getAll")
     List<Tender> getAllTenders() {
         return tenderService.getAllTenders();
     }
 
     @PostMapping("/set")
-    Map<String, Object> setTenderStatus(@RequestParam("number") String number,@RequestParam("status") int status) {
+    Map<String, Object> setTenderStatus(@RequestParam("number") String number, @RequestParam("status") int status) {
         Map<String, Object> map = new HashMap<>();
         if (number == null) {
             map.put("msg", "参数错误");
@@ -57,7 +59,7 @@ public class TenderController {
     }
 
     @GetMapping("/set")
-    Map<String, Object> setTenderStatusById(@RequestParam("id") int id,@RequestParam("status") int status) {
+    Map<String, Object> setTenderStatusById(@RequestParam("id") int id, @RequestParam("status") int status) {
         Map<String, Object> map = new HashMap<>();
 
         Tender tender = tenderService.setStatusById(id, status);
@@ -132,5 +134,10 @@ public class TenderController {
         }
         map.put("msg", "删除成功");
         return map;
+    }
+
+    @GetMapping("/find")
+    public List<Tender> searchTender(@RequestParam("name") String name){
+        return tenderService.searchTender(name);
     }
 }

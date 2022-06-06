@@ -19,4 +19,5 @@ public interface TenderService {
     int deleteById(int id);
     Tender addNewTender(Tender tender);
     List<Tender> getAllTenders();
+    List<Tender> searchTender(String name);
 }

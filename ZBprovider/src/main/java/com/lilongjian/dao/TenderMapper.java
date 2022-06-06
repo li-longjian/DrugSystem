@@ -23,6 +23,7 @@ public interface TenderMapper {
     int deleteByNumber(String number);
     int deleteById(int id);
     int addNewTender(Tender tender);
+    List<Tender> searchTender(String name);
 
 
 

@@ -14,7 +14,7 @@
         select * from tb
     </select>
     <select id="getBiddingByAnnouncer" resultType="bidding" parameterType="String" >
-        select * from tb where announcer=#{announcer}
+        select * from tb where announcer=#{email}
     </select>
     <update id="setBiddingStatus" parameterType="map" >
         update tb set status = #{status} where number = #{number}
@@ -35,7 +35,7 @@
     </delete>
 
     <insert id="addBidding" parameterType="bidding">
-        insert into values (#{id},#{legalName},#{phone},#{zbnumber},#{number},#{companName},
+        insert into tb values (#{id},#{legalName},#{phone},#{zbnumber},#{number},#{companName},
         #{bailTotal},#{announcer},#{date},#{status})
     </insert>
 </mapper>

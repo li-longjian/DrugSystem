@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/zb")
+@RequestMapping("/tb")
 public class BiddingController {
     @Autowired
     private BiddingInterface biddingClient;
@@ -24,7 +24,7 @@ public class BiddingController {
         return biddingClient.getBiddingBuNumber(number);
     }
 
-    @GetMapping("/get/ema")
+    @PostMapping("/get/ema")
     public List<Bidding> getBiddingByAnnouncer(String email){
         return biddingClient.getBiddingByAnnouncer(email);
     }
@@ -38,7 +38,6 @@ public class BiddingController {
     Map<String, Object> setBiddingStatus(String number, int status){
         return biddingClient.setBiddingStatus(number, status);
     }
-
 
     @GetMapping("/set")
     public Map<String, Object> setBiddingStatusById(int id,int status){

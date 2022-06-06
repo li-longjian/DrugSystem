@@ -71,4 +71,9 @@ public class TenderController {
     public Map<String,Object> deleteByNumber(String number) {
         return tenderClient.deleteByNumber(number);
     }
+
+    @GetMapping("/find")
+    public List<Tender> searchTender(String name){
+        return tenderClient.searchTender(name);
+    }
 }

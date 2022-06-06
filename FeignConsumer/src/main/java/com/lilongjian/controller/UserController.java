@@ -15,11 +15,7 @@ public class UserController {
     @Autowired
     private UserInterface userClient;
 
-//    @PostMapping("/login")
-//    public Map<String, Object> UserLogin(String email, String password) {
-//
-//        return userClient.UserLogin(email, password);
-//    }
+
 
     @GetMapping("/page")
     public List<User> getUserPage(String pageNum, String pageSize) {

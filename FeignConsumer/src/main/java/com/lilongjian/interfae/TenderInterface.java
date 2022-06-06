@@ -41,4 +41,6 @@ public interface TenderInterface {
 
     @GetMapping("/zb/del/num")
     public Map<String, Object> deleteByNumber(@RequestParam("number") String number) ;
+    @GetMapping("/zb/find")
+    List<Tender> searchTender(@RequestParam("name") String name);
 }

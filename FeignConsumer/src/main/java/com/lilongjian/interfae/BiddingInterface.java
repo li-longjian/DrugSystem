@@ -17,8 +17,8 @@ public interface BiddingInterface {
     @GetMapping("/tb/get/num")
     public Bidding getBiddingBuNumber(@RequestParam("number") String number);
 
-    @GetMapping("/tb/get/ema")
-    public List<Bidding> getBiddingByAnnouncer(@RequestParam("email") String email) ;
+    @PostMapping("/tb/get/ema")
+    public List<Bidding> getBiddingByAnnouncer(@RequestParam("email") String email);
 
     @GetMapping("/tb/getAll")
     public List<Bidding> getAllBidding();

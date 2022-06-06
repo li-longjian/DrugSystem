@@ -64,7 +64,7 @@ public class BiddingServiceImpl implements BiddingService {
         if(bidding == null) return null;
         int i = biddingMapper.update(bidding);
         if(i<=0) return null;
-        return biddingMapper.getBiddingById(bidding.getId());
+        return biddingMapper.getBiddingBuNumber(bidding.getNumber());
     }
 
     @Override

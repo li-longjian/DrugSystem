@@ -103,4 +103,9 @@ public class TenderServiceImpl implements TenderService {
     public List<Tender> getAllTenders() {
         return tenderMapper.getAllTenders();
     }
+
+    @Override
+    public List<Tender> searchTender(String name) {
+        return tenderMapper.searchTender(name);
+    }
 }

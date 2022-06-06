@@ -26,7 +26,7 @@ public class BiddingController {
         return biddingService.getBiddingBuNumber(number);
     }
 
-    @GetMapping("/get/ema")
+    @PostMapping("/get/ema")
     public List<Bidding> getBiddingByAnnouncer(@RequestParam("email") String email) {
         return biddingService.getBiddingByAnnouncer(email);
     }
