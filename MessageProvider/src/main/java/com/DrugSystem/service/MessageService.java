@@ -11,4 +11,5 @@ public interface MessageService {
     int update(Message message);
     int deleteMessage(int id);
     List<Message> getMessageByPage(int page,int pageSize);
+    int setStatus(int id,int status);
 }

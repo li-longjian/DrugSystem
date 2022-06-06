@@ -7,6 +7,8 @@ import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -27,6 +29,10 @@ public class MessageServiceImpl implements MessageService {
 
     @Override
     public int addMessage(Message message) {
+        if(message == null) return -1;
+        Date date = new Date();
+        message.setDate(date);
+        message.setStatus(0);
         return messageMapper.addMessage(message);
     }
 
@@ -45,5 +51,13 @@ public class MessageServiceImpl implements MessageService {
         PageHelper.startPage(page, pageSize);
         List<Message> allMessage = messageMapper.getAllMessage();
         return allMessage;
+    }
+
+    @Override
+    public int setStatus(int id, int status) {
+        HashMap<String,Integer> map = new HashMap<>();
+        map.put("id",id);
+        map.put("status",status);
+        return messageMapper.setMessageStatus(map);
     }
 }
