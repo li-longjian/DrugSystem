@@ -21,13 +21,13 @@ public class BiddingController {
     }
 
     @GetMapping("/get/num")
-    public Bidding getBiddingBuNumber(String number){
+    public Bidding getBiddingBuNumber(@RequestParam("number") String number){
         if(number == null) return null;
         return biddingService.getBiddingBuNumber(number);
     }
 
     @GetMapping("/get/ema")
-    public List<Bidding> getBiddingByAnnouncer(String email) {
+    public List<Bidding> getBiddingByAnnouncer(@RequestParam("email") String email) {
         return biddingService.getBiddingByAnnouncer(email);
     }
 
@@ -37,7 +37,7 @@ public class BiddingController {
     }
 
     @PostMapping("/set")
-    Map<String, Object> setBiddingStatus(String number, int status){
+    Map<String, Object> setBiddingStatus(@RequestParam("number") String number,@RequestParam("status") int status){
         Map<String, Object> map = new HashMap<>();
         Bidding bidding = biddingService.setBiddingStatus(number, status);
         if(bidding == null) {
@@ -50,7 +50,7 @@ public class BiddingController {
     }
 
     @GetMapping("/set")
-    public Map<String, Object> setBiddingStatusById(int id,int status) {
+    public Map<String, Object> setBiddingStatusById(@RequestParam("id") int id,@RequestParam("status") int status) {
         Map<String, Object> map = new HashMap<>();
         Bidding bidding = biddingService.setStatusById(id, status);
         if(bidding == null) {
@@ -63,7 +63,7 @@ public class BiddingController {
     }
 
     @PostMapping("/update")
-    public Map<String, Object> update(Bidding bidding){
+    public Map<String, Object> update(@RequestBody Bidding bidding){
         Map<String, Object> map = new HashMap<>();
         if (bidding == null) {
             map.put("msg", "参数错误");
@@ -80,7 +80,7 @@ public class BiddingController {
     }
 
     @PostMapping("/add")
-    public Map<String,Object> addBidding(Bidding bidding) {
+    public Map<String,Object> addBidding(@RequestBody Bidding bidding) {
         Map<String, Object> map = new HashMap<>();
         if (bidding == null) {
             map.put("msg", "参数错误");
@@ -108,7 +108,7 @@ public class BiddingController {
         return map;
     }
     @GetMapping("/del/num")
-    public Map<String, Object> deleteByNumber(String number){
+    public Map<String, Object> deleteByNumber(@RequestParam("number") String number){
         Map<String, Object> map = new HashMap<>();
         if (number == null) {
             map.put("msg", "参数错误");
