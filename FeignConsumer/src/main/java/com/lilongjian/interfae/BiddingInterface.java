@@ -11,6 +11,8 @@ import java.util.Map;
 @FeignClient(value = "TBprovider")
 public interface BiddingInterface {
 
+    @GetMapping("/tb/get/page")
+    public List<Bidding> getBidsByPage(@RequestParam("page") int page,@RequestParam("pageSize") int pageSize);
     @GetMapping("/tb/get/{id}")
     public Bidding getBiddingById(@PathVariable("id") int id);
 

@@ -15,6 +15,10 @@ public class TenderController {
     @Autowired
     private TenderInterface tenderClient;
 
+    @GetMapping("/get/page")
+    List<Tender> getTenderByPage(int page,int pageSize){
+        return tenderClient.getTenderByPage(page, pageSize);
+    }
     @GetMapping("/get/{id}")
     Tender getTenderById(@PathVariable(value = "id") int id) {
         return tenderClient.getTenderById(id);

@@ -3,6 +3,7 @@ package com.DrugSystem.service.impl;
 import com.DrugSystem.dao.BiddingMapper;
 import com.DrugSystem.domain.Bidding;
 import com.DrugSystem.service.BiddingService;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,12 @@ import java.util.UUID;
 public class BiddingServiceImpl implements BiddingService {
     @Autowired
     private BiddingMapper biddingMapper;
+
+    @Override
+    public List<Bidding> getBidsByPage(int page, int pageSize) {
+        PageHelper.startPage(page, pageSize);
+        return biddingMapper.getAllBidding();
+    }
 
     @Override
     public Bidding getBiddingById(int id) {

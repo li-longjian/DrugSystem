@@ -5,6 +5,7 @@ import com.DrugSystem.domain.Bidding;
 import java.util.List;
 
 public interface BiddingService {
+    List<Bidding> getBidsByPage(int page,int pageSize);
     Bidding getBiddingById(int id);
     Bidding getBiddingBuNumber(String number);
     List<Bidding> getAllBidding();

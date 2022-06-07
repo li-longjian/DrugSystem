@@ -11,6 +11,9 @@ import java.util.Map;
 
 @FeignClient(value = "ZBprovider")
 public interface TenderInterface {
+    @GetMapping("/zb/get/page")
+    List<Tender> getTenderByPage(@RequestParam("page") int page,@RequestParam("pageSize") int pageSize);
+
     @GetMapping("/zb/get/{id}")
     Tender getTenderById(@PathVariable(value = "id") int id);
 

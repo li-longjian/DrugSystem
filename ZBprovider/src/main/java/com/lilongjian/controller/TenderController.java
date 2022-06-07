@@ -16,6 +16,10 @@ public class TenderController {
     @Autowired
     private TenderService tenderService;
 
+    @GetMapping("/get/page")
+    List<Tender> getTenderByPage(@RequestParam("page")int page,@RequestParam("pageSize")int pageSize){
+        return tenderService.getTenderByPage(page, pageSize);
+    }
     @GetMapping("/get/{id}")
     Tender getTenderById(@PathVariable(value = "id") int id) {
         return tenderService.getTenderById(id);
@@ -137,7 +141,7 @@ public class TenderController {
     }
 
     @GetMapping("/find")
-    public List<Tender> searchTender(@RequestParam("name") String name){
+    public List<Tender> searchTender(@RequestParam("name") String name) {
         return tenderService.searchTender(name);
     }
 }

@@ -15,6 +15,10 @@ public class BiddingController {
     @Autowired
     private BiddingService biddingService;
 
+    @GetMapping("/get/page")
+    public List<Bidding> getBidsByPage(@RequestParam("page") int page,@RequestParam("pageSize") int pageSize){
+        return biddingService.getBidsByPage(page, pageSize);
+    }
     @GetMapping("/get/{id}")
     public Bidding getBiddingById(@PathVariable("id") int id){
         return biddingService.getBiddingById(id);

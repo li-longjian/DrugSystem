@@ -1,5 +1,6 @@
 package com.lilongjian.service.Impl;
 
+import com.github.pagehelper.PageHelper;
 import com.lilongjian.dao.TenderMapper;
 import com.lilongjian.domain.Bidding;
 import com.lilongjian.domain.Tender;
@@ -15,6 +16,11 @@ public class TenderServiceImpl implements TenderService {
     private TenderMapper tenderMapper;
 
 
+    @Override
+    public List<Tender> getTenderByPage(int page, int pageSize) {
+        PageHelper.startPage(page,pageSize);
+        return tenderMapper.getAllTenders();
+    }
 
     @Override
     public Tender getTenderById(int id) {

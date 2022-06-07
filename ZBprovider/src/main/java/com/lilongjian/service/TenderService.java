@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface TenderService {
 
+    List<Tender> getTenderByPage(int page,int pageSize);
     Tender getTenderById(int id);
     Tender getTenderByNumber(String number);
     List<Tender> getTendersByAnnouncer(String email);//得到所有当前发布者发布的招标信息

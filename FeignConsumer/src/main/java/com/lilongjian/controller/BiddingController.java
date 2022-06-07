@@ -14,6 +14,10 @@ public class BiddingController {
     @Autowired
     private BiddingInterface biddingClient;
 
+    @GetMapping("/get/page")
+    public List<Bidding> getBidsByPage(int page,int pageSize){
+        return biddingClient.getBidsByPage(page, pageSize);
+    }
     @GetMapping("/get/{id}")
     public Bidding getBiddingById(@PathVariable("id") int id){
         return biddingClient.getBiddingById(id);
@@ -35,7 +39,7 @@ public class BiddingController {
     }
 
     @PostMapping("/set")
-    Map<String, Object> setBiddingStatus(String number, int status){
+    public Map<String, Object> setBiddingStatus(String number, int status){
         return biddingClient.setBiddingStatus(number, status);
     }
 
