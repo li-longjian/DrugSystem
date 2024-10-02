@@ -1,5 +1,7 @@
 package com.lilongjian.controller;
 
+import com.lilongjian.domain.LoginParam;
+import com.lilongjian.domain.User;
 import com.lilongjian.interfae.UserLoginInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +17,7 @@ public class LoginController {
     private UserLoginInterface loginClient;
 
     @PostMapping("/login")
-    public Map<String, Object> UserLogin(String email, String password){
-        return loginClient.UserLogin(email,password);
+    public Map<String, Object> UserLogin(String email,String password){
+        return loginClient.UserLogin(email, password);
     }
 }

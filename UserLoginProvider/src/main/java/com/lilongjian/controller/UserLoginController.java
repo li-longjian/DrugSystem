@@ -1,5 +1,6 @@
 package com.lilongjian.controller;
 
+import com.lilongjian.domain.LoginParam;
 import com.lilongjian.domain.User;
 import com.lilongjian.service.UserLoginService;
 import com.lilongjian.util.MD5Utils;
@@ -16,7 +17,7 @@ public class UserLoginController {
     private UserLoginService userService;
 
     @PostMapping("/login")
-    public Map<String, Object> UserLogin(String email, String password) {
+    public Map<String, Object> UserLogin( String email,String password) {
         Map<String, Object> map = new HashMap<>();
         //加密密码
         MD5Utils md5Utils = new MD5Utils();

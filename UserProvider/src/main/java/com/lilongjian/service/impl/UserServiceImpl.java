@@ -67,16 +67,23 @@ public class UserServiceImpl implements UserService {
     @Override
     public int updateUser(User user) {
 
-        User newuser = new User();
-        newuser.setName(user.getName());
-        newuser.setId(user.getId());
-        newuser.setDate(new Date());
-        newuser.setIdentity(user.getIdentity());
-        newuser.setPassword(user.getPassword());
-        newuser.setAvatar(user.getAvatar());
-        newuser.setEmail(user.getEmail());
-        newuser.setIsAdmin(user.getIsAdmin());
-        return userMapper.updateUser(newuser);
+//        User newuser = new User();
+//        newuser.setName(user.getName());
+//        newuser.setId(user.getId());
+//        newuser.setDate(new Date());
+//        newuser.setIdentity(user.getIdentity());
+//        newuser.setPassword(user.getPassword());
+//        newuser.setAvatar(user.getAvatar());
+//        newuser.setEmail(user.getEmail());
+//        newuser.setIsAdmin(user.getIsAdmin());
+//        return userMapper.updateUser(newuser);
+        String  password = user.getPassword();
+        String email = user.getEmail();
+        //加密密码
+        MD5Utils md5Utils = new MD5Utils();
+        String newPassword = md5Utils.getMD5(password, email);
+        user.setPassword(newPassword);
+        return userMapper.updateUser(user);
     }
 
     @Override

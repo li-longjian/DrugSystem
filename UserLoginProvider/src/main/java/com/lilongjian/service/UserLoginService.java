@@ -1,5 +1,6 @@
 package com.lilongjian.service;
 
+import com.lilongjian.domain.LoginParam;
 import com.lilongjian.domain.User;
 
 

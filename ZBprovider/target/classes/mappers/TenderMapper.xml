@@ -41,4 +41,7 @@
     <select id="getBiddingBuNumber" parameterType="String" resultType="bidding">
         select * from tb where zbnumber=#{number}
     </select>
+    <select id="searchTender" resultType="tender" parameterType="String">
+        select * from tb where companyName like concat('%',#{name},'%');
+    </select>
 </mapper>

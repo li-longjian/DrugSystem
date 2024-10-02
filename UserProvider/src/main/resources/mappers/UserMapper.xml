@@ -19,8 +19,30 @@
     <insert id="registerUser" parameterType="map">
         insert into USER values (#{id},#{isAdmin},#{name},#{email},#{password},#{avatar},#{date},#{identity})
     </insert>
-    <update id="updateUser" parameterType="map">
-        update USER set  isAdmin=#{isAdmin},name=#{name},email=#{email},password=#{password},avatar=#{avatar},date=#{date},identity=#{identity} where id=#{id}
+<!--    <update id="updateUser" parameterType="user">-->
+<!--        update USER-->
+<!--        <set>-->
+<!--            <if test="isAdmin != null">-->
+<!--                isAdmin=#{isAdmin}-->
+<!--            </if>-->
+<!--            <if test="name != null">-->
+<!--                name=#{name}-->
+<!--            </if>-->
+<!--            <if test="password != null">-->
+<!--                password=#{password}-->
+<!--            </if>-->
+<!--            <if test="avatar != null">-->
+<!--                avatar=#{avatar}-->
+<!--            </if>-->
+<!--            <if test="identity != null">-->
+<!--                identity=#{identity}-->
+<!--            </if>-->
+<!--        </set>-->
+<!--        where  id=#{id}-->
+<!--&#45;&#45;         update USER set  isAdmin=#{isAdmin},name=#{name},email=#{email},password=#{password},avatar=#{avatar},date=#{date},identity=#{identity} where id=#{id}-->
+<!--    </update>-->
+    <update id="updateUser" parameterType="user">
+        update USER set  isAdmin=#{isAdmin},name=#{name},password=#{password},avatar=#{avatar},date=#{date},identity=#{identity} where emial=#{email}
     </update>
     <delete id="deleteUserById" parameterType="int">
         delete from USER where id=#{id}

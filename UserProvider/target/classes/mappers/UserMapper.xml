@@ -26,6 +26,6 @@
         delete from USER where id=#{id}
     </delete>
     <select id="findUser" parameterType="string" resultType="user">
-        select * from USER where name like concat('%',#{name},'%');
+        select * from USER where name like concat('%',#{name},'%')
     </select>
 </mapper>
